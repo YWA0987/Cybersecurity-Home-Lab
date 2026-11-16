@@ -56,7 +56,13 @@ Read the [detailed troubleshooting case study](docs/troubleshooting.md) and [net
 
 ## Portfolio evidence
 
-The screenshots below were extracted and sanitized from my lab reports. They are stored in a separate starter package and will be uploaded to the repository's **screenshots/** folder. See [evidence inventory](docs/evidence.md) for the exact files and what they demonstrate.
+The 13 original lab screenshots are now published in the [screenshots/](screenshots/) directory, with a linked [evidence inventory](docs/evidence.md) documenting each image. Highlights from the connectivity tests:
+
+| Windows → Kali: 4/4 successful | Kali → Windows: 4/4 successful |
+| --- | --- |
+| ![Windows ping to Kali](screenshots/windows-to-kali-success.png) | ![Kali ping to Windows](screenshots/kali-to-windows-success.png) |
+
+The complete evidence set includes VM desktops, VirtualBox network settings, static IP configuration, the initial blocked ping, the administrator privilege error, the firewall rule, and NAT verification.
 
 ## Roadmap
 
