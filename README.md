@@ -31,14 +31,14 @@ A growing, hands-on lab for Windows/Linux administration, networking, security m
 
 ## Network architecture
 
-\`\`\`mermaid
+```mermaid
 flowchart LR
     W["Windows 11 VM<br/>192.168.50.20/24"]
     K["Kali Linux VM<br/>eth0: 192.168.50.10/24"]
     N["VirtualBox NAT<br/>Kali eth1: 10.0.3.15/24"]
     W <-->|"ICMP: 0% packet loss"| K
     K -. "Package downloads" .-> N
-\`\`\`
+```
 
 Both VMs communicate over the isolated **Security-Lab** internal network. Kali also has a *separate* NAT adapter used for software repository access. Intentionally vulnerable practice targets will remain on separate isolated networks without internet-facing adapters.
 
