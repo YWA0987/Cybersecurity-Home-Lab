@@ -1,0 +1,33 @@
+# Virtual machine disks / archives / snapshots
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.qcow2
+*.ova
+*.ovf
+*.iso
+*.vbox
+*.vbox-prev
+*.sav
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.kdbx
+
+# Logs and packet captures: review before any publication
+*.log
+*.pcap
+*.pcapng
+
+# Avoid uploading original private internship submissions
+*TechBiz*Task*.pdf
+
+# Operating-system clutter
+.DS_Store
+Thumbs.db
