@@ -1,25 +1,42 @@
-# Screenshot Evidence Inventory
+# Screenshot Evidence — Virtualized Cybersecurity Home Lab
 
-The original lab reports contain screenshots supporting the configuration and testing described in this repository. Screenshots have been extracted into the accompanying **Cybersecurity-Home-Lab-Starter.zip** package, with internship identifiers and unnecessary personal information excluded.
+These **13 original lab screenshots** were extracted from the Week 1 SOC Analyst and Ethical Hacking setup reports and published without the original report covers or student identifier.
 
-**Upload status:** The documentation has been published. The screenshot image files still need to be added to the GitHub **screenshots/** folder from the starter package before linking them as published evidence.
+They support the technical claims in the [main README](../README.md), [network configuration](network-configuration.md), and [firewall troubleshooting case study](troubleshooting.md).
 
-| Screenshot filename | Demonstrates |
+| Image | What it demonstrates |
 | --- | --- |
-| kali-desktop.png | Kali VM booted and usable |
-| windows-desktop.png | Windows evaluation VM booted (expired evaluation notice visible) |
-| kali-virtualbox-network.png | Kali VirtualBox internal network settings |
-| windows-virtualbox-network.png | Windows VirtualBox internal network settings |
-| kali-static-address.png | Kali static IPv4 configuration |
-| windows-ipconfig.png | Windows static IPv4 configuration |
-| kali-ping-failed.png | Initial Kali → Windows ICMP packet loss |
-| powershell-access-denied.png | Firewall rule command blocked by insufficient permissions |
-| powershell-firewall-rule.png | Firewall exception created successfully after elevation |
-| windows-to-kali-success.png | Windows → Kali ICMP connectivity verified |
-| kali-to-windows-success.png | Kali → Windows ICMP connectivity verified |
-| kali-dual-interfaces.png | Kali internal and NAT interfaces |
-| kali-package-index.png | Successful package index retrieval through NAT |
+| [Kali desktop](../screenshots/kali-desktop.png) | Kali Linux running inside VirtualBox |
+| [Windows desktop](../screenshots/windows-desktop.png) | Windows 11 evaluation VM running |
+| [Kali VirtualBox network](../screenshots/kali-virtualbox-network.png) | Internal Network selected for Kali |
+| [Windows VirtualBox network](../screenshots/windows-virtualbox-network.png) | Matching internal network settings for Windows |
+| [Kali static address](../screenshots/kali-static-address.png) | Kali `eth0` using 192.168.50.10/24 |
+| [Windows IP configuration](../screenshots/windows-ipconfig.png) | Windows using 192.168.50.20/24 |
+| [Initial failed Kali ping](../screenshots/kali-ping-failed.png) | Four transmitted pings with 100% loss |
+| [Initial PowerShell access denied](../screenshots/powershell-access-denied.png) | Firewall change blocked by lack of elevation |
+| [Successful firewall rule](../screenshots/powershell-firewall-rule.png) | Targeted inbound ICMPv4 rule created in elevated PowerShell |
+| [Windows → Kali ping](../screenshots/windows-to-kali-success.png) | Four responses; 0% loss |
+| [Kali → Windows ping](../screenshots/kali-to-windows-success.png) | Four responses; 0% loss after firewall adjustment |
+| [Kali dual interfaces](../screenshots/kali-dual-interfaces.png) | `eth0` for internal network and `eth1` for NAT |
+| [Kali package index update](../screenshots/kali-package-index.png) | Repository connectivity through the NAT interface |
 
-These images should be uploaded as **individual image files**, not the original assignment PDFs. The reports contain a student identifier and administrative information irrelevant to a public portfolio.
+## Evidence highlights
 
-TryHackMe completion screenshots are deliberately omitted from the portfolio. The focus is on the independently configured lab, technical decisions, observed behavior, and troubleshooting evidence.
+**Firewall troubleshooting — initially blocked inbound ICMP:**
+
+![Kali ping to Windows initially failed](../screenshots/kali-ping-failed.png)
+
+**Successful verification — Kali can reach Windows after creating the rule:**
+
+![Kali to Windows ping succeeded](../screenshots/kali-to-windows-success.png)
+
+**PowerShell — new firewall rule created with administrator privileges:**
+
+![Successful creation of ICMPv4 firewall rule](../screenshots/powershell-firewall-rule.png)
+
+## Notes
+
+- Screenshots are from an **isolated educational lab**, not a production environment.
+- The Windows VM displayed an expired evaluation/activation warning; this remains a documented limitation.
+- Private lab addresses (192.168.50.0/24) are included for reproducibility. No passwords, VM disks, or original internship report PDFs are published here.
+- The screenshots demonstrate **networking, setup and troubleshooting**, not a completed SIEM deployment.
