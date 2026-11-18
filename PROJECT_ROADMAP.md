@@ -10,10 +10,15 @@ This is a **living checklist**, not a list of completed experience. Each future 
 - [x] Verify bidirectional connectivity with 0% packet loss
 - [x] Add a separate NAT adapter to Kali for package-list updates
 
-## Phase 2: OS logs — PLANNED
-- [ ] Explore Linux logs under /var/log
+## Phase 2: OS logs — IN PROGRESS
+- [x] Explore Linux logs under /var/log
+- [x] Read plain-text logs with cat, less, tail, and grep
+- [x] Use journalctl when expected auth.log and syslog files are absent
+- [x] Search the current journal for a local sudo authentication failure
 - [ ] Use Windows Event Viewer to inspect relevant security and system events
-- [ ] Generate a safe, repeatable lab event and document how to find it
+- [x] Generate a safe local journal event with logger and verify it in journalctl -f
+
+Linux portion documented on November 18, 2026: [walkthrough and screenshots](docs/linux-log-analysis.md). Windows Event Viewer work remains pending.
 
 ## Phase 3: Wireshark — PLANNED
 - [ ] Capture traffic generated between controlled lab systems

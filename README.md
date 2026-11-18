@@ -1,10 +1,10 @@
 # Virtualized Cybersecurity Home Lab
 
-**VirtualBox · Kali Linux · Windows 11 · IPv4 Networking · Windows Firewall**
+**VirtualBox · Kali Linux · Windows 11 · IPv4 Networking · Windows Firewall · Linux Logs**
 
 A growing, hands-on lab for Windows/Linux administration, networking, security monitoring, and investigation practice. This is an **educational environment**, not a production SOC. The initial phase was completed in November 2026 during practical SOC Analyst and Ethical Hacking training.
 
-> **Current status — Phase 1 complete:** Two VMs are running, static IP addresses are configured, and bidirectional ICMP connectivity has been verified. SIEM deployment and incident analysis are **planned**, not completed.
+> **Current status — Phase 1 complete; Linux log practice documented:** The VMs have verified connectivity. On Kali, I have also inspected local logs, searched an authentication failure, and verified a tagged event in the live journal. Windows log analysis, SIEM deployment, and incident investigation remain **planned**.
 
 ## What I've built
 
@@ -15,6 +15,19 @@ A growing, hands-on lab for Windows/Linux administration, networking, security m
 - Used elevated PowerShell to create a narrowly scoped **Windows Firewall ICMPv4 inbound rule** rather than disabling the firewall.
 - Verified **4/4 successful ICMP replies in both directions** after the change.
 - Added a separate **NAT interface to Kali** for package-index downloads while retaining the internal lab interface.
+
+## Linux log inspection and monitoring
+
+On **November 18, 2026**, I extended the lab with introductory Linux log practice:
+
+- Checked available log sources and used `journalctl` when `auth.log` and `syslog` were absent on this VM.
+- Practiced `cat`, `less`, `tail`, and `grep` on `/var/log/alternatives.log`.
+- Identified a **local sudo authentication failure** after an incorrect password entry.
+- Followed the system journal and confirmed a **Security-Lab** test message submitted with `logger`.
+
+**[Read the walkthrough and view six screenshots →](docs/linux-log-analysis.md)**
+
+This milestone demonstrates local log inspection and event verification, not a deployed SIEM or a confirmed attack investigation.
 
 ## Environment
 
@@ -56,7 +69,7 @@ Read the [detailed troubleshooting case study](docs/troubleshooting.md) and [net
 
 ## Portfolio evidence
 
-The 13 original lab screenshots are now published in the [screenshots/](screenshots/) directory, with a linked [evidence inventory](docs/evidence.md) documenting each image. Highlights from the connectivity tests:
+The 13 original setup screenshots and six Linux log screenshots (19 total) are now published in the [screenshots/](screenshots/) directory, with a linked [evidence inventory](docs/evidence.md) documenting each image. Highlights from the connectivity tests:
 
 | Windows → Kali: 4/4 successful | Kali → Windows: 4/4 successful |
 | --- | --- |
@@ -70,7 +83,8 @@ The complete evidence set includes VM desktops, VirtualBox network settings, sta
 - [x] Configure internal network and static addressing
 - [x] Diagnose firewall restrictions and verify bidirectional ICMP
 - [x] Configure Kali's separate NAT connection for package updates
-- [ ] Analyze Linux and Windows event logs
+- [x] Practice local Linux log inspection and verify a live journal test event
+- [ ] Inspect Windows security and system events
 - [ ] Capture and interpret Wireshark traffic
 - [ ] Install Splunk or Wazuh and ingest logs
 - [ ] Develop SIEM dashboards, searches, and alerts
@@ -84,13 +98,14 @@ Details: [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md). Completed work will be added 
 - The Windows evaluation image displayed an expired evaluation/activation warning. Licensing status needs resolution before continued use.
 - These results were produced in **my own virtual lab**; no third-party systems were tested.
 - Lab VM images, credentials, private data, and internship reports are not included.
-- This repository currently demonstrates virtualized networking and troubleshooting, **not yet** operational SIEM monitoring or incident response.
+- This repository currently demonstrates virtualized networking, troubleshooting, and introductory Linux log inspection, **not yet** operational SIEM monitoring or incident response.
 
 ## Documentation
 
 - [Network configuration](docs/network-configuration.md)
 - [Firewall troubleshooting walkthrough](docs/troubleshooting.md)
+- [Linux log analysis and live monitoring](docs/linux-log-analysis.md)
 - [Screenshot inventory](docs/evidence.md)
 - [Project roadmap](PROJECT_ROADMAP.md)
 
-**Skills demonstrated:** VirtualBox, Windows, Kali Linux, Linux commands, IPv4 networking, static IPs, ICMP, Windows Firewall, PowerShell elevation, systematic troubleshooting, technical documentation.
+**Skills demonstrated:** VirtualBox, Windows, Kali Linux, Linux commands, IPv4 networking, static IPs, ICMP, Windows Firewall, PowerShell elevation, systematic troubleshooting, journalctl, grep, tail, logger, introductory authentication-log interpretation, technical documentation.
